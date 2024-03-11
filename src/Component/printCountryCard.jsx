@@ -1,14 +1,14 @@
 import { useState } from "react";
-import visitedList from "./visitedList";
+
 
 
 const PrintCountryCard = ({country,visitedHandel}) => { 
 const {name,flags,population}=country;
 const [visited,setVisited]=useState(false);
 
-const handelClick=(country)=>{
+const handelClick=()=>{
 setVisited(!visited)
-visitedHandel(country)
+// visitedHandel(country)
 }
 // console.log(visitedHandel);
 
@@ -23,7 +23,7 @@ visitedHandel(country)
                 <p className="">Population: {population}</p>
             </div>
             <div className="bottomVContainer card-body">
-             <button onClick={()=>{handelClick(country)}} className={visited?"btn btn-sm text-xl bg-gray-400":"btn text-xl btn-sm"} >Visited {visited&&  <span className="text-xl  font-bold">✓</span>}</button>
+             <button onClick={()=>{handelClick();visitedHandel(country)}} className={visited?"btn btn-sm text-xl bg-gray-400":"btn text-xl btn-sm"} >Visited {visited&&  <span className="text-xl  font-bold">✓</span>}</button>
 
             </div>
             
