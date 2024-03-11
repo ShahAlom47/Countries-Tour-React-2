@@ -7,7 +7,9 @@ const LoadCountriesData = () => {
 
     const [allCnt, setallCnt] = useState([])
     useEffect(() => {
-        fetch(`https://restcountries.com/v3.1/all`)
+       
+        // fetch(`https://restcountries.com/v3.1/all`)
+            fetch('localApi.json')
             .then(res => res.json())
             .then(data => setallCnt(data))
     }, [])
